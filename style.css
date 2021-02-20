@@ -1,0 +1,740 @@
+/* ::-webkit-scrollbar {
+    display: none;
+} */
+
+
+/* AQUI EMPIEZA EL MOVIL--------------------------------------------------------------------------------- */
+
+@media screen and (max-width: 767px) {
+    /* body {
+        margin: 3rem 5rem;
+    } */
+    main {
+        display: block;
+    }
+    #headerPrincipal {
+        background-image: url(".//img/BEER/pexels-nextvoyage-3779784.jpg");
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 15em;
+    }
+    #menu,
+    #menu2 {
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        height: 18rem;
+        justify-content: center;
+        /* align-items: flex-end; */
+    }
+    #title {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        align-items: baseline;
+    }
+    #list {
+        display: block;
+        color: ivory;
+        font-size: 2rem;
+        font-weight: 700;
+    }
+    #menu {
+        justify-content: space-between;
+    }
+    p {
+        /* las P no tienen que llevar display: flex; */
+        flex-grow: 1;
+        flex-basis: 0;
+        /*Da el mismo tamaño a las P independientemente de su numero de letras. */
+        margin: 0;
+        /*le quito el margin a las P*/
+        text-align: center;
+        padding: 0.5em;
+        font-size: 0.8rem;
+    }
+    #container {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 0%;
+        margin-top: 0.5em;
+    }
+    #container2 {
+        display: block;
+        justify-content: space-between;
+        max-width: 100%;
+        height: auto;
+        margin-top: 0.6rem;
+    }
+    .miniContainer1,
+    .miniContainer2,
+    .miniContainer3,
+    .miniContainer4,
+    .miniContainer5 img {
+        width: 100%;
+        height: auto;
+    }
+    @supports(object-fit: contain) {
+        .miniContainer1,
+        .miniContainer2,
+        .miniContainer3,
+        .miniContainer4,
+        .miniContainer5 img {
+            height: 100%;
+            object-fit: contain;
+            object-position: center center;
+        }
+    }
+    .miniContainer1,
+    .miniContainer2,
+    .miniContainer3 {
+        display: flex;
+        height: 9rem;
+        /* background-size: contain; */
+        width: 100%;
+    }
+    .miniContainer4 {
+        width: 100%;
+        height: 9rem;
+        margin-top: 0.6rem;
+    }
+    .miniContainer5 {
+        width: 100%;
+        height: auto;
+    }
+    .miniContainer2 {
+        margin: 0.6rem 0 0.6rem 0;
+    }
+    h1 {
+        margin-top: 0.4em;
+        font-size: 2rem;
+        font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        color: ivory;
+        margin-bottom: 0;
+    }
+    .red {
+        color: ivory;
+        font-style: oblique;
+        margin-left: 0;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        margin-top: 0;
+        margin-bottom: 1rem;
+        -webkit-text-stroke: 1px red;
+    }
+    /* AQUI ACABA LA PAGINA PRICIPAL y EMPIEZA LA PAGINA DE BUSQUEDA------------------------------------------------------------- */
+    #headerBuscador {
+        display: block;
+        flex-direction: column;
+        justify-content: center;
+        background-image: url("../img/bdnow-hp.jpg");
+        background-size: cover;
+        height: 13em;
+    }
+    #miniContainers {
+        display: block;
+        width: 100%;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+        /* height: 18rem; */
+        height: auto;
+    }
+    #dropDawn {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+    #description {
+        width: 100%;
+        height: 13rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+    #boton {
+        width: 100%;
+        height: auto;
+        background-color: white;
+        padding: 0;
+        border: none;
+    }
+    #foto {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        width: 100%;
+        height: 25em;
+        padding: 0%;
+    }
+    #foto img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        border-left: 5px #55d2d8 solid;
+        border-right: 5px #55d2d8 solid;
+    }
+    img {
+        width: 100%;
+        height: 100%;
+        /* display: block; */
+    }
+    #selectBeers {
+        display: flex;
+        background-color: #009dca;
+        width: 100%;
+        border: none;
+        font-size: 1.3em;
+        font-weight: bold;
+        font-style: oblique;
+        color: ivory;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        text-align-last: center;
+        /* centrar el texto en un select  */
+    }
+    #caracteristics {
+        height: auto;
+        width: 100%;
+    }
+    select:focus {
+        outline: none;
+    }
+    option {
+        border: none;
+        max-width: 100%;
+    }
+    iframe {
+        width: 100%;
+        height: 100%;
+        border-radius: 0.2rem;
+    }
+    #tipoBeer {
+        background-color: #009dca;
+        color: ivory;
+        font-size: 1.8rem;
+        padding: 0;
+    }
+    #informacion {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #009dca;
+        color: ivory;
+        margin-top: 0.5rem;
+    }
+    h2 {
+        background-color: #55d2d8;
+        color: ivory;
+        text-align: center;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+    a {
+        color: ivory;
+        text-decoration: none;
+    }
+    /* PAGINA DE FAVORITOS ''''''''''''''''''''''''''''''''''''''''''''''''''*/
+    #bodyFavoritos {
+        margin: 0;
+        background-image: url("../img/BEER/dios\ beer.jpg");
+        border-radius: 10px;
+        background-size: 100% 100%;
+    }
+    #divFavoritos {
+        display: flex;
+        justify-content: center;
+        padding: 1rem;
+    }
+    #godList {
+        font-size: 30px;
+        background-color: rgba(34, 48, 6, 0.144);
+        font-family: 'Prata', serif;
+    }
+    #listFavorit {
+        width: 100%;
+        height: 49em;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: flex-end;
+        background-size: 100% 100%;
+        background-color: rgba(34, 48, 6, 0.356);
+        border-radius: 30px;
+    }
+    #listFavorit p {
+        font-size: 24px;
+        font-family: 'Dancing Script', cursive;
+        color: ivory;
+        font-weight: bold;
+        padding: 0%;
+        flex-grow: 0;
+    }
+    /* PAGINA NOSOTROS___________________________________________________________________________________ */
+    #we {
+        width: 100%;
+        height: 15em;
+        background-image: url("../img/np_Group\ of\ friends\ taking\ a\ silly\ group\ selfie\ outside_P5r9P0_free.jpg");
+        background-size: 100% 106%;
+        align-items: flex-end;
+        display: flex;
+    }
+    #nosotros {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: flex-end;
+    }
+    .content {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.233);
+        padding: 20px;
+        color: ivory;
+        margin-top: 0.5em;
+    }
+    /* FOOTER-------------------------------------------------------------------------------------------------- */
+    ul {
+        display: inline-grid;
+        grid-auto-flow: row;
+        grid-gap: 24px;
+        justify-items: center;
+        margin: auto;
+    }
+    @media (min-width:767px) {
+        ul {
+            grid-auto-flow: column;
+        }
+    }
+    a {
+        color: white;
+        text-decoration: none;
+        box-shadow: inset 0 -1px 0 hsla(0, 0%, 100%, 0.4);
+    }
+    a:hover {
+        box-shadow: inset 0 -1.2em 0 hsla(0, 0%, 100%, 0.4);
+    }
+    li:last-child {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+    li:hover~li p {
+        animation: wave-animation 0.3s infinite;
+    }
+    /* below is just for demo styling */
+    #footer {
+        display: flex;
+        height: 20em;
+        width: 100%;
+        line-height: 1.3;
+        font-family: Menlo, monospace;
+        margin-top: 0.5em;
+    }
+    .footIndex {
+        background-color: #8d7817;
+    }
+    .footBusqueda {
+        background-color: #002a38;
+    }
+    @keyframes wave-animation {
+        0%,
+        100% {
+            transform: rotate(0deg);
+        }
+        25% {
+            transform: rotate(20deg);
+        }
+        75% {
+            transform: rotate(-15deg);
+        }
+    }
+}
+
+
+/* AQUI EMPIEZA EL DESKTOP----------------------------------------------------------------------- */
+
+
+/* AQUI EMPIEZA EL DESKTOP----------------------------------------------------------------------- */
+
+
+/* AQUI EMPIEZA EL DESKTOP----------------------------------------------------------------------- */
+
+
+/* AQUI EMPIEZA EL DESKTOP----------------------------------------------------------------------- */
+
+@media screen and (min-width: 1024px) {
+    body {
+        margin: 3rem 5rem;
+        display: flex;
+        flex-direction: column
+    }
+    #index {
+        width: 100%;
+        height: 23em;
+        background-image: url("../img/pexels-nextvoyage-3779784.jpg");
+        background-size: 100% 100%;
+    }
+    #headerPrincipal {
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        display: flex;
+    }
+    #title {
+        display: flex;
+        margin-left: 2em;
+        margin-top: 2em;
+    }
+    #headerBuscador {
+        display: flex;
+        justify-content: flex-end;
+        background-image: url("../img/bdnow-hp.jpg");
+        background-size: 100% 100%;
+        height: 18em;
+        width: 100%;
+    }
+    #menu {
+        display: flex;
+        max-width: 100%;
+        height: auto;
+        justify-content: flex-end;
+        align-items: flex-end;
+    }
+    #menu2 {
+        display: flex;
+        max-width: 100%;
+        height: auto;
+        justify-content: flex-end;
+        align-items: flex-end;
+    }
+    #menu {
+        justify-content: space-between;
+    }
+    p {
+        flex-grow: 1;
+        flex-basis: 0;
+        /*Da el mismo tamaño a las P independientemente de su numero de letras. */
+        margin: 0;
+        /*le quito el margin a las P*/
+        text-align: center;
+        padding: 0.5em;
+        font-size: 1.8rem;
+    }
+    #container {
+        display: flex;
+        max-width: 100%;
+        height: auto;
+        margin-top: 0.6rem;
+        margin-bottom: 0.6rem;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .miniContainer1,
+    .miniContainer2,
+    .miniContainer3,
+    .miniContainer4,
+    .miniContainer5 img {
+        width: 100%;
+        height: auto;
+    }
+    @supports(object-fit: cover) {
+        .miniContainer1,
+        .miniContainer2,
+        .miniContainer3,
+        .miniContainer4,
+        .miniContainer5 img {
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+        }
+    }
+    .miniContainer1,
+    .miniContainer2,
+    .miniContainer3 {
+        display: flex;
+        height: 15em;
+        background-size: cover;
+        width: 32.7%;
+    }
+    #container2 {
+        display: flex;
+        flex-wrap: wrap-reverse;
+        justify-content: space-between;
+        max-width: 100%;
+        height: auto;
+    }
+    .miniContainer4 {
+        width: 39%;
+        height: 15rem;
+    }
+    .miniContainer5 {
+        width: 60%;
+        height: 15rem;
+    }
+    .miniContainer5 img {
+        width: 100%;
+    }
+    #list {
+        display: flex;
+        color: ivory;
+        font-size: 1.1em;
+        justify-content: flex-end;
+        align-items: flex-end;
+    }
+    h1 {
+        margin-top: 0.4em;
+        font-size: 3.7em;
+        font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        color: ivory;
+    }
+    .red {
+        color: ivory;
+        font-family: 'Cinzel', serif;
+        -webkit-text-stroke: 2px #f00806;
+    }
+    #miniContainers {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+        height: 18rem;
+    }
+    #description {
+        width: 47%;
+        height: auto;
+    }
+    /* BOTON-------------------------------------------------------------------------------------- */
+    #boton {
+        width: 26%;
+        height: auto;
+        background-color: white;
+        padding: 0;
+        border: none;
+        background-color: white;
+    }
+    #foto {
+        display: flex;
+        justify-content: center;
+        max-width: 100%;
+        height: 100%;
+    }
+    #foto img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: cover;
+    }
+    /* BOTON-------------------------------------------------------------------------------------- */
+    img {
+        max-width: 100%;
+        height: 100%;
+        display: block;
+    }
+    /* SELECTOR DE CERVEZAS-------------------------------------------------------------------------------- */
+    #dropDawn {
+        width: 25%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+    select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+    }
+    #selectBeers {
+        display: flex;
+        background-color: #009dca;
+        width: 100%;
+        border: none;
+        font-size: 78%;
+        font-weight: 900;
+        color: ivory;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        text-align-last: center;
+        overflow: hidden !important;
+        height: 100%;
+    }
+    #selectBeers::-webkit-scrollbar {
+        display: none;
+    }
+    select:focus {
+        outline: none;
+    }
+    option {
+        border: none;
+        max-width: 100%;
+    }
+    #tipoBeer {
+        background-color: #009dca;
+        color: ivory;
+        font-size: 1.8rem;
+        padding: 0;
+    }
+    /* SELECTOR DE CERVEZAS-------------------------------------------------------------------------------- */
+    iframe {
+        width: 100%;
+        height: 100%;
+        border-radius: 0.2rem;
+    }
+    #informacion {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #009dca;
+        color: ivory;
+        margin-top: 0.5rem;
+    }
+    h2 {
+        background-color: #55d2d8;
+        color: ivory;
+        text-align: center;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+    a {
+        color: ivory;
+        text-decoration: none;
+    }
+    /* PAGINA DE FAVORITOS ''''''''''''''''''''''''''''''''''''''''''''''''''*/
+    #bodyFavoritos {
+        margin: 0;
+        background-image: url("../img/BEER/dios\ beer.jpg");
+        background-size: 100% 100%;
+    }
+    #divFavoritos {
+        display: flex;
+        justify-content: center;
+    }
+    #godList {
+        font-size: 2rem;
+        background-color: rgba(34, 48, 6, 0.144);
+        margin-bottom: 6rem;
+        font-family: 'Prata', serif;
+        ;
+    }
+    #listFavorit {
+        width: 40%;
+        height: 35rem;
+        /* background-color: white; */
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: flex-end;
+        padding-bottom: 2rem;
+        /* background-image: url("../proyecto/img/BEER/f9252a0e7ffac31aa63a675acb767631.jpg"); */
+        background-size: 100% 100%;
+        height: 94vh;
+        width: 35%;
+        background-color: rgba(34, 48, 6, 0.356);
+        border-radius: 30px;
+    }
+    #listFavorit p {
+        font-size: 24px;
+        font-family: 'Dancing Script', cursive;
+        color: ivory;
+        font-weight: bold;
+        padding: 0%;
+        flex-grow: 0;
+    }
+    /* NOSOTROS------------------------------------------------------------------------------------------ */
+    #we {
+        width: 100%;
+        height: 25em;
+        background-image: url("../img/np_Group\ of\ friends\ taking\ a\ silly\ group\ selfie\ outside_P5r9P0_free.jpg");
+        background-size: 100% 106%;
+        align-items: flex-end;
+        display: flex;
+    }
+    #about {
+        font-family: 'Prata', serif;
+    }
+    .about {
+        font-family: 'Prata', serif;
+        background-color: rgba(0, 110, 255, 0.233);
+    }
+    #nosotros {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: flex-end;
+    }
+    .content {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.233);
+        padding: 20px;
+        color: ivory;
+        margin-top: 0.5em;
+        background-image: url("../img/np_Three\ people\ hold\ sparklers\ outside\ at\ dusk_10WOj0_free.jpg");
+        background-size: 100% 106%;
+    }
+    /* FOOTER-------------------------------------------------------------------------------------------------- */
+    ul {
+        display: inline-grid;
+        grid-auto-flow: row;
+        grid-gap: 24px;
+        justify-items: center;
+        margin: auto;
+    }
+    @media (min-width: 500px) {
+        ul {
+            grid-auto-flow: column;
+        }
+    }
+    a {
+        color: white;
+        text-decoration: none;
+        box-shadow: inset 0 -1px 0 hsla(0, 0%, 100%, 0.4);
+    }
+    a:hover {
+        box-shadow: inset 0 -1.2em 0 hsla(0, 0%, 100%, 0.4);
+    }
+    li:last-child {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+    li:hover~li p {
+        animation: wave-animation 0.3s infinite;
+    }
+    /* below is just for demo styling */
+    #footer {
+        display: flex;
+        height: 20em;
+        width: 100%;
+        ;
+        line-height: 1.3;
+        font-family: Menlo, monospace;
+        margin-top: 0.5em;
+    }
+    .footIndex {
+        background-color: #2d2321;
+    }
+    .footBusqueda {
+        background-color: #002a38;
+    }
+    @keyframes wave-animation {
+        0%,
+        100% {
+            transform: rotate(0deg);
+        }
+        25% {
+            transform: rotate(20deg);
+        }
+        75% {
+            transform: rotate(-15deg);
+        }
+    }
+}
