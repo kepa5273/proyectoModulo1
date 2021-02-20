@@ -13,7 +13,7 @@
         display: block;
     }
     #headerPrincipal {
-        background-image: url("https://raw.githubusercontent.com/parzibyte/WaterPy/master/img/BEER/pexels-nextvoyage-3779784.jpg");
+        background-image: url("../img/BEER/pexels-nextvoyage-3779784.jpg");
         background-size: cover;
         display: flex;
         flex-direction: column;
