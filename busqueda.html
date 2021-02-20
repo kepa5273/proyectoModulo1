@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>busqueda</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header id="headerBuscador">
+        <div id="menu2">
+            <div id="list">
+                <a href="file:///C:/Users/Kepa%20Arevalo/Desktop/Documents/CURSO%20BOOTCAMP/proyecto/index.html">
+                    <p>Principal</p>
+                </a>
+                <a href="file:///C:/Users/Kepa%20Arevalo/Desktop/Documents/CURSO%20BOOTCAMP/proyecto/nosotros.html">
+                    <p>About</p>
+                </a>
+                <a href="file:///C:/Users/Kepa%20Arevalo/Desktop/Documents/CURSO%20BOOTCAMP/proyecto/favoritos.html" target="_blank" rel="noopener noreferrer">
+                    <p>favorites</p>
+                </a>
+            </div>
+
+
+        </div>
+    </header>
+    <main id="mainBusqueda">
+        <!-- <div id="container2"> -->
+
+        <div id="miniContainers">
+            <div id="dropDawn">
+                <select name="beers" id="selectBeers"><option value="">Elige una cerveza</option></select>
+                <img src="../proyecto/img/logo azul.jpg" alt="">
+            </div>
+            <div id="description">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/BvBU0-T8g6c?controls=0 ?rel=0&amp;autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+
+
+
+
+
+            <button id="boton">
+            <div id="foto">
+                <img src="../proyecto/img/BEER/brew dog recap recortada.jpg" alt="">
+            </div>
+        </button>
+
+        </div>
+        <div id="caracteristics">
+            <h2>BEER CHARACTERISTICS </h2>
+            <p id="tipoBeer">Choose a beer, click on its photo and send it to favorites.</p>
+        </div>
+        <div id="informacion">
+            <p>Craft beers have become a phenomenon in our country and around the world. Its rise is due to a combination of factors that has managed to change the perception of fans of this drink in our current society.</p>
+        </div>
+
+
+    </main>
+    <footer>
+        <div id="footer" class="footBusqueda">
+            <ul>
+                <li><a href="https://twitter.com/kepa_arevalo">Twitter</a></li>
+                <li><a href="https://www.linkedin.com/in/kepa-arevalo-perez">Linkedin</a></li>
+                <li><a href="mailto:kepa.map@gmail.com">Email</a></li>
+                <li><a href="https://slack.com/kepa-arevalo">slack</a></li>
+                <li><a href="https://github.com/kepa5273">Github</a></li>
+                <!-- <li>
+                     <p>👋</p> 
+                </li> -->
+            </ul>
+        </div>
+    </footer>
+
+    <!-- AQUI ACABA EL HTML -------------------------------------------------------------------------------- -->
+
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!--(enlace a axios) -->
+
+
+
+    <script>
+        let data;
+        let beerName;
+        axios.get(`https://api.punkapi.com/v2/beers/`) //(llamada a la API.)
+            .then(function(response) { //CUANDO RECIBIMOS LA LLAMADA.....CON UNA FUNCION ANONIMA.
+                data = response.data; //le damos el valor response.data
+                for (let i = 0; i < data.length; i++) {
+                    cervezas = data[i].name; //creamos una variable con los datos de la llamada que nos da el nombre de cada cerveza.
+                    cervezasOp = document.createElement("option"); //creamos una variable para que cree un option. 
+                    cervezasOp.textContent = cervezas; //dentro de el OPTION creado,le damos el valor de cervezas.
+                    document.getElementById("selectBeers").appendChild(cervezasOp); //introducimos en la id selectBeers el valor de cervezasOp.
+                }
+            })
+
+        document.querySelector("#selectBeers").addEventListener("change", cambioDeCerveza)
+
+        function cambioDeCerveza() {
+
+            let cerveList = document.querySelector("#selectBeers").value //creamos una variable con el valor recogido por el querySelector.value de la id .
+            for (let j = 0; j < data.length; j++) {
+                //beerName = data[j].name; //con esta forma se quedaba siempre con la ultima opcion.
+                if (cerveList == data[j].name) { //lo comparamos con cerveList que tambien tiene el valor name.
+                    beerName = cerveList;
+                    document.getElementById("foto").innerHTML = ""; //con este metodo elimino la imagen anterior.
+                    let fotosP = document.createElement("img"); //creamos un elemento de etiqueta img.
+                    fotosP.src = data[j].image_url; //la img creada en la linea anterior le damos el valor de data[j].image_url.
+                    document.getElementById("foto").appendChild(fotosP); //aqui metemos la imagen c y la metemos en el contenedor creado ("foto"). 
+
+
+
+                    // document.getElementById("tipoBeer").innerHTML += `<p>${data[j].tagline}</p>`;`
+                    document.getElementById("informacion").innerHTML = ""; //con este metodo elimino el parrafo anterior.
+                    document.getElementById("tipoBeer").innerHTML = ""; //con este metodo elimino el parrafo anterior.
+                    let descriT = document.createElement("p"); //creamos un elemento de etiqueta p.
+                    descriT.innerText = data[j].tagline; //la p creada en la linea anterior le damos el valor de data[j].tagline.
+
+
+                    document.getElementById("tipoBeer").appendChild(descriT); //aqui metemos el parrafo en el contenedor creado ("informacion"). 
+                    let descriP = document.createElement("p"); //creamos un elemento de etiqueta p.
+                    descriP.innerText = data[j].description; //la p creada en la linea anterior le damos el valor de data[j].description.
+                    document.getElementById("informacion").appendChild(descriP); //aqui metemos el parrafo en el contenedor creado ("informacion"). 
+
+                }
+            }
+
+        }
+        document.querySelector("#foto").addEventListener("click", function() { //esto se ejecuta directamente cuando le das al botón ya que usamos el addEventListener del click
+
+            // LOCALSTORAGE-----------------------------------------------------------------------
+
+
+            let exist = false;
+            let arrayFavoritos = localStorage.getItem("favoritos"); //arrayFavoritos le doy el valor del localstorge.
+            if (arrayFavoritos === null) { //si el localstorage est vacio
+                arrayFavoritos = []; //creamos un array vacio
+            } else {
+                arrayFavoritos = JSON.parse(arrayFavoritos); //lo parseamos a array.
+
+                for (let i = 0; i < arrayFavoritos.length; i++) { //recorro el array con el valor del localstorage.
+
+                    if (arrayFavoritos[i] === beerName) { //si hay una coincidencia es true si no es false.
+                        exist = true;
+                    }
+                }
+            }
+            if (exist == false) { //si no hay una coincidencia eejecuta lo que hay dentro del if.
+
+                arrayFavoritos.push(beerName); //metemos el nombre de la cerveza en el arrayFavoritos.
+                arrayFavoritos = JSON.stringify(arrayFavoritos); //convertimos el array a un string.
+                localStorage.setItem("favoritos", arrayFavoritos) //Guardamos el array convertido a string en el localstorage, asociado a una clave
+            } else {
+                alert("ya esta metida")
+            }
+
+        })
+    </script>
+
+</body>
+
+</html>
