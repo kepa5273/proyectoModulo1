@@ -129,7 +129,7 @@
         display: block;
         flex-direction: column;
         justify-content: center;
-        background-image: url("../img/bdnow-hp.jpg");
+        background-image: url("https://github.com/kepa5273/proyectoModuloUno/blob/gh-pages/img/bdnow-hp.jpg?raw=true");
         background-size: cover;
         height: 13em;
     }
