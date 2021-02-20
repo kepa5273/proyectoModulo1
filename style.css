@@ -395,7 +395,7 @@
     #headerBuscador {
         display: flex;
         justify-content: flex-end;
-        background-image: url("..//img/bdnow-hp.jpg");
+        background-image: url(".//img/bdnow-hp.jpg");
         background-size: 100% 100%;
         height: 18em;
         width: 100%;
