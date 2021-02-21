@@ -429,7 +429,7 @@
     }
     #container {
         display: flex;
-        max-width: 100%;
+        width: 100%;
         height: 23em;
         margin-top: 0.6rem;
         margin-bottom: 0.6rem;
@@ -466,9 +466,9 @@
     }
     #container2 {
         display: flex;
-        flex-wrap: wrap-reverse;
+        
         justify-content: space-between;
-        max-width: 100%;
+        width: 100%;
         height: 23em;
     }
     .miniContainer4 {
@@ -713,7 +713,7 @@
     /* below is just for demo styling */
     #footer {
         display: flex;
-        height: 20em;
+        height: 23em;
         width: 100%;
         ;
         line-height: 1.3;
